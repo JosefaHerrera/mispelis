@@ -6,9 +6,12 @@ nav {
     .material-icons {
         cursor: pointer;
     }
-    .title-details {
-        text-align: center;
-    }
+}
+
+.title-details {
+    text-align: center;
+    background-color: #2b2c30;
+    color: white;
 }
 
 .details-card {
@@ -46,5 +49,12 @@ nav {
     }
     .people-cast {
         color: #C14748;
+    }
+    .btn-favorites {
+        background-color: #C14748;
+        color: white;
+        font-size: 9px;
+        border: none;
+        margin-left: 50px;
     }
 }

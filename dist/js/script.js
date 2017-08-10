@@ -20300,7 +20300,11 @@ $(document).ready(function() {
             $('.img-movie').append(`
                 <img src="${responseMovie.poster}" class="img-desdeapi">
             `);
+            $('.rating').append(`
+                <div>${responseMovie.rating}</div>
+            `);
             $('.title-movie').append(`
+                
                 <div class="title-desdeapi">
                     ${responseMovie.show_title}  <span class="category-desdeapi">${responseMovie.category}</span>
                 </div>               
