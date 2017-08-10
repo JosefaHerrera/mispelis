@@ -1,0 +1,50 @@
+nav {
+    background-color: #2b2c30;
+    .lupa {
+        margin-left: 260px;
+    }
+    .material-icons {
+        cursor: pointer;
+    }
+    .title-details {
+        text-align: center;
+    }
+}
+
+.details-card {
+    .btn-play {
+        background-color: white;
+    }
+    .icon-play {
+        color: #C14748;
+    }
+    .watch-movie {
+        background-color: #C14748;
+        padding: 20px;
+        color: white;
+    }
+    .arrow-right {
+        position: absolute;
+        cursor: pointer;
+    }
+    .img-desdeapi {
+        width: 75% !important;
+        margin-left: 15%;
+    }
+    .title-desdeapi {
+        font-weight: bold;
+    }
+    .category-desdeapi {
+        color: gray;
+        font-weight: 500;
+        font-size: 10px;
+    }
+    .starring-title {
+        color: #C14748;
+        font-weight: bold;
+        font-size: 13px;
+    }
+    .people-cast {
+        color: #C14748;
+    }
+}
