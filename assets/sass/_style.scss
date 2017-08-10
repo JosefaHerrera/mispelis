@@ -3,13 +3,17 @@ body {
     padding: 0;
 }
 
+#index-peliculas {
+    padding: 10px;
+    background-color: #a9c8d3;
+}
+
 #favorite {
-    width: 20px;
-    height: 15px;
-    font-size: 9px;
-    border: none;
-    padding: 5px;
-    float: right;
+    cursor: pointer;
+    color: #00bcd4;
+    i {
+        font-size: 30px;
+    }
 }
 
 .big {
@@ -19,4 +23,8 @@ body {
 
 .small {
     font-size: 10px;
+}
+
+.dat {
+    margin-left: 20px;
 }

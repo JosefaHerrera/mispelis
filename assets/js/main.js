@@ -26,26 +26,25 @@ $(document).ready(function() {
 
                 $(".gris").append(
                     `<div class="col s12">
-            <div class="col s12">
-                <span class="movie big">${dataDirector.show_title}</span>
-                <span class="year small">${dataDirector.release_year}</span>|
-                <span class="category small">${dataDirector.category}</span>
-                <a id="favorite" class="boton waves-light red darken-4">Add Favorite</a>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s12">
-            <div class="col s4">
-                <div class="time small">${dataDirector.runtime}</div>
-            </div>
-            <div class="col s4">
-                <div class="director small">${dataDirector.director}</div>
-            </div>
-            <div class="col s4">
-                <div class="rating small">${dataDirector.rating}</div>
-            </div>
-        </div>`
+                        <div class="col s12">
+                            <div class="col s8">
+                                <span class="movie big">${dataDirector.show_title}</span>
+                                <span class="year small">${dataDirector.release_year}</span> |
+                                <span class="category small">${dataDirector.category}</span>
+                            </div>
+                            <div class="col s4 offset-s10">
+                                <a id="favorite" class="boton waves-light"><i class="material-icons">stars</i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row dat">
+                        <div class="col s12">
+                            <span class="time small">${dataDirector.runtime} </span>
+                            <span class="director small">${dataDirector.director} </span>
+                            <span class="rating small">${dataDirector.rating} </span>
+                        </div>
+                    </div>
+                    <hr>`
                 );
 
             });
