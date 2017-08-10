@@ -21,25 +21,48 @@ $(document).ready(function() {
 
                 // director
                 console.log('director ->', dataDirector.director);
+
+                //dibujar info en la página
+
+                $(".gris").append(
+                    `<div class="col s12">
+            <div class="col s12">
+                <span class="movie big">${dataDirector.show_title}</span>
+                <span class="year small">${dataDirector.release_year}</span>|
+                <span class="category small">${dataDirector.category}</span>
+                <a id="favorite" class="boton waves-light red darken-4">Add Favorite</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="col s4">
+                <div class="time small">${dataDirector.runtime}</div>
+            </div>
+            <div class="col s4">
+                <div class="director small">${dataDirector.director}</div>
+            </div>
+            <div class="col s4">
+                <div class="rating small">${dataDirector.rating}</div>
+            </div>
+        </div>`
+                );
+
             });
+
         })
-        .fail(function() {
+
+
+    .fail(function() {
             alert('Fallo');
         })
         .always(function() {
             console.log('Yeii')
         });
 
-
-
-
-    //inicialización sidenavHorror
-    // Initialize collapse button
-    $(".button-collapse").sideNav();
-    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-    //$('.collapsible').collapsible();
-
     //inicializacion select
 
     $('select').material_select();
+
+
 });
