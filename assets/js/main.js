@@ -30,4 +30,16 @@ $(document).ready(function() {
             console.log('Yeii')
         });
 
+
+
+
+    //inicialización sidenavHorror
+    // Initialize collapse button
+    $(".button-collapse").sideNav();
+    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+    //$('.collapsible').collapsible();
+
+    //inicializacion select
+
+    $('select').material_select();
 });

@@ -20254,6 +20254,34 @@ if (jQuery) {
 })(jQuery);
 
 $(document).ready(function() {
+
+    //solo para llamar pelicula listadas por director
+
+    $.ajax({
+            url: `https://netflixroulette.net/api/api.php?director=Steven%20Spielberg`,
+            type: 'GET',
+            datatype: 'JSON',
+        })
+        .done(function(response) {
+            console.log(response); //todo lo que haga ocurre acá
+
+            response.forEach(function(data) {
+                console.log(data.show_title);
+                console.log(data.release_year);
+                console.log(data.category);
+            })
+
+        })
+        .fail(function() {
+            alert('Fallo');
+        })
+        .always(function() {
+            console.log('Yeii')
+        });
+
+
+});
+$(document).ready(function() {
     $.ajax({
             url: `https://netflixroulette.net/api/api.php?director=Steven%20Spielberg`,
             type: 'GET',
@@ -20285,32 +20313,16 @@ $(document).ready(function() {
             console.log('Yeii')
         });
 
-    //solo para llamar pelicula listadas por director
-
-    $.ajax({
-            url: `https://netflixroulette.net/api/api.php?director=Steven%20Spielberg`,
-            type: 'GET',
-            datatype: 'JSON',
-        })
-        .done(function(response) {
-            console.log(response); //todo lo que haga ocurre acá
-
-            response.forEach(function(data) {
-                console.log(data.show_title);
-                console.log(data.release_year);
-                console.log(data.category);
-            })
-
-        })
-        .fail(function() {
-            alert('Fallo');
-        })
-        .always(function() {
-            console.log('Yeii')
-        });
 
 
-});
-$(document).ready(function() {
 
+    //inicialización sidenavHorror
+    // Initialize collapse button
+    $(".button-collapse").sideNav();
+    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+    //$('.collapsible').collapsible();
+
+    //inicializacion select
+
+    $('select').material_select();
 });

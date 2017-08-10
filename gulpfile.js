@@ -58,13 +58,6 @@ gulp.task('watchjs', function() {
     gulp.watch('assets/js/*.js', ['script']);
 });
 
-/**
- * task para reconocer los cambios en el js
- */
-
-gulp.task('watchjs', function() {
-    gulp.watch('assets/js/*.js', ['script']);
-});
 
 /**
  * Le indicamos a gulp cuales son las tareas a ejecutar al correr el comando gulp
