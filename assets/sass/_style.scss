@@ -1,3 +1,36 @@
+/* Estilos Fran */
+body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+#index-peliculas {
+    padding: 10px;
+    background-color: #a9c8d3;
+}
+
+#favorite {
+    cursor: pointer;
+    color: #00bcd4;
+    i {
+        font-size: 30px;
+    }
+}
+
+.big {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.small {
+    font-size: 10px;
+}
+
+.dat {
+    margin-left: 20px;
+
+  
+/*Estilos Nat */
 nav {
     background-color: #2b2c30;
     .lupa {
