@@ -1,1 +1,21 @@
 //profile.html
+*{
+	margin: 0;
+	padding: 0;
+}
+.nav-profile{
+	background-color: #2b2c30;
+	.lupa{
+		margin-left: 300px;
+	}
+}
+.title-profile{
+	padding: 8px;
+	background-color: #2b2c30;
+	padding-bottom: 10px;
+}
+.favorite-profile{
+	background-color: #CF2C3E;
+    padding: 20px;
+    color: white;
+}
