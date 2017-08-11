@@ -1,30 +1,36 @@
 $(document).ready(function() {
     //inicializacion select
 
-    $('select').material_select();
-  
+
+
     $.ajax({
             url: `https://netflixroulette.net/api/api.php?director=Steven%20Spielberg`,
             type: 'GET',
             datatype: 'JSON',
         })
         .done(function(response) {
-            console.log(response);
-            response.forEach(function(dataDirector) {
+
+            response.forEach(function(dataDirector, index) {
+                console.log('CATEGORY', dataDirector.category);
+
+
+                $('#select-category').append(`
+                    <option value="">${dataDirector.category}</option>
+                `);
                 // Lista de peliculas
-                console.log('nombre pelicula ->', dataDirector.show_title);
+                // console.log('nombre pelicula ->', dataDirector.show_title);
 
                 // año de lanzamiento
-                console.log('año ->', dataDirector.release_year);
+                // console.log('año ->', dataDirector.release_year);
 
                 // categoria
-                console.log('categoria ->', dataDirector.category);
+                // console.log('categoria ->', dataDirector.category);
 
                 // duracion
-                console.log('duración ->', dataDirector.runtime);
+                // console.log('duración ->', dataDirector.runtime);
 
                 // director
-                console.log('director ->', dataDirector.director);
+                // console.log('director ->', dataDirector.director);
 
                 //dibujar info en la página
 
@@ -52,10 +58,10 @@ $(document).ready(function() {
                 );
 
             });
-
+            $('select').material_select();
         })
 
-        .fail(function() {
+    .fail(function() {
             alert('Fallo');
         })
         .always(function() {

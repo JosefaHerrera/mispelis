@@ -1,93 +1,94 @@
-/* Estilos Fran */
-body {
-    margin: 0 auto;
-    padding: 0;
-}
-
-#index-peliculas {
-    padding: 10px;
-    background-color: #a9c8d3;
-}
-
-#favorite {
-    cursor: pointer;
-    color: #00bcd4;
-    i {
-        font-size: 30px;
+    /* Estilos Fran */
+    
+    body {
+        margin: 0 auto;
+        padding: 0;
     }
-}
-
-.big {
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.small {
-    font-size: 10px;
-}
-
-.dat {
-    margin-left: 20px;
-
-  
-/*Estilos Nat */
-nav {
-    background-color: #2b2c30;
-    .lupa {
-        margin-left: 260px;
+    
+    #index-peliculas {
+        padding: 10px;
+        background-color: #a9c8d3;
     }
-    .material-icons {
+    
+    #favorite {
         cursor: pointer;
+        color: #00bcd4;
+        i {
+            font-size: 30px;
+        }
     }
-}
-
-.title-details {
-    text-align: center;
-    background-color: #2b2c30;
-    color: white;
-}
-
-.details-card {
-    .btn-play {
-        background-color: white;
-    }
-    .icon-play {
-        color: #CF2C3E;
-    }
-    .watch-movie {
-        background-color: #CF2C3E;
-        padding: 20px;
-        color: white;
-    }
-    .arrow-right {
-        position: absolute;
-        cursor: pointer;
-    }
-    .img-desdeapi {
-        width: 75% !important;
-        margin-left: 15%;
-    }
-    .title-desdeapi {
+    
+    .big {
+        font-size: 12px;
         font-weight: bold;
     }
-    .category-desdeapi {
-        color: gray;
-        font-weight: 500;
+    
+    .small {
         font-size: 10px;
     }
-    .starring-title {
-        color: #CF2C3E;
-        font-weight: bold;
-        font-size: 13px;
+    
+    .dat {
+        margin-left: 20px;
     }
-    .people-cast {
-        color: #CF2C3E;
+    /*Estilos Nat */
+    
+    nav {
+        background-color: #2b2c30;
+        .lupa {
+            margin-left: 260px;
+        }
+        .material-icons {
+            cursor: pointer;
+        }
     }
-    .btn-favorites {
-        background-color: #CF2C3E;
+    
+    .title-details {
+        text-align: center;
+        background-color: #2b2c30;
         color: white;
-        font-size: 9px;
-        border: none;
-        margin-left: 50px;
     }
-}
+    
+    .details-card {
+        .btn-play {
+            background-color: white;
+        }
+        .icon-play {
+            color: #CF2C3E;
+        }
+        .watch-movie {
+            background-color: #CF2C3E;
+            padding: 20px;
+            color: white;
+        }
+        .arrow-right {
+            position: absolute;
+            cursor: pointer;
+        }
+        .img-desdeapi {
+            width: 75% !important;
+            margin-left: 15%;
+        }
+        .title-desdeapi {
+            font-weight: bold;
+        }
+        .category-desdeapi {
+            color: gray;
+            font-weight: 500;
+            font-size: 10px;
+        }
+        .starring-title {
+            color: #CF2C3E;
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .people-cast {
+            color: #CF2C3E;
+        }
+        .btn-favorites {
+            background-color: #CF2C3E;
+            color: white;
+            font-size: 9px;
+            border: none;
+            margin-left: 50px;
+        }
+    }
