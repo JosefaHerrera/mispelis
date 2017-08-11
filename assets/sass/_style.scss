@@ -8,6 +8,13 @@
     #index-peliculas {
         padding: 10px;
         background-color: #a9c8d3;
+        .btn-details {
+            background-color: aquamarine;
+            border: none;
+            margin-right: 10px;
+            color: darkturquoise;
+            border-radius: 4px;
+        }
     }
     
     #favorite {

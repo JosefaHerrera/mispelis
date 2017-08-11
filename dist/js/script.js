@@ -20253,37 +20253,77 @@ if (jQuery) {
   };
 })(jQuery);
 
+// $(document).ready(function() {
+
+//     //solo para llamar pelicula listadas por director
+
+//     $.ajax({
+//             url: `https://netflixroulette.net/api/api.php?director=Steven%20Spielberg`,
+//             type: 'GET',
+//             datatype: 'JSON',
+//         })
+//         .done(function(response) {
+//             console.log(response); //todo lo que haga ocurre acá
+
+//             response.forEach(function(data) {
+//                 console.log(data.show_title);
+//                 console.log(data.release_year);
+//                 console.log(data.category);
+//             })
+
+//         })
+//         .fail(function() {
+//             alert('Fallo');
+//         })
+//         .always(function() {
+//             console.log('Yeii')
+//         });
+
+
+// });
 $(document).ready(function() {
+    var params = new URLSearchParams(location.search.slice(1));
 
-    //solo para llamar pelicula listadas por director
-
-    $.ajax({
-            url: `https://netflixroulette.net/api/api.php?director=Steven%20Spielberg`,
-            type: 'GET',
-            datatype: 'JSON',
-        })
-        .done(function(response) {
-            console.log(response); //todo lo que haga ocurre acá
-
-            response.forEach(function(data) {
-                console.log(data.show_title);
-                console.log(data.release_year);
-                console.log(data.category);
+    if (params.get('name')) {
+        $.ajax({
+                // esta debe variar segun el click
+                url: `https://netflixroulette.net/api/api.php?title=${params.get('name')}`,
+                type: 'GET',
+                datatype: 'JSON',
             })
+            .done(function(responseMovie) {
+                //console.log(responseMovie);
+                //foto
+                //console.log('url poster', responseMovie.poster);
+                $('.img-movie').append(`
+                <img src="${responseMovie.poster}" class="img-desdeapi">
+            `);
+                $('.rating').append(`
+                <div>${responseMovie.rating}</div>
+            `);
+                $('.title-movie').append(`
 
-        })
-        .fail(function() {
-            alert('Fallo');
-        })
-        .always(function() {
-            console.log('Yeii')
-        });
-
+                <div class="title-desdeapi">
+                    ${responseMovie.show_title}  <span class="category-desdeapi">${responseMovie.category}</span>
+                </div>               
+            `);
+                $('.description-movie').append(`
+                ${responseMovie.summary}
+            `);
+                $('.people-cast').append(`
+                ${responseMovie.show_cast}
+            `);
+            })
+            .fail(function() {
+                alert('Fallo');
+            })
+            .always(function() {
+                console.log('Yeii')
+            });
+    }
 
 });
 $(document).ready(function() {
-    //inicializacion select
-
 
 
     $.ajax({
@@ -20294,8 +20334,6 @@ $(document).ready(function() {
         .done(function(response) {
 
             response.forEach(function(dataDirector, index) {
-                console.log('CATEGORY', dataDirector.category);
-
 
                 $('#select-category').append(`
                     <option value="">${dataDirector.category}</option>
@@ -20326,7 +20364,7 @@ $(document).ready(function() {
                                 <span class="category small">${dataDirector.category}</span>
                             </div>
                             <div class="col s4 offset-s10">
-                                <a id="favorite" class="boton waves-light"><i class="material-icons">stars</i></a>
+                                <a id="favorite" class="boton waves-light"><i class="material-icons">stars</i></a>                                
                             </div>
                         </div>
                     </div>
@@ -20334,56 +20372,29 @@ $(document).ready(function() {
                         <div class="col s12">
                             <span class="time small">${dataDirector.runtime} </span>
                             <span class="director small">${dataDirector.director} </span>
-                            <span class="rating small">${dataDirector.rating} </span>
+                            <span class="rating small">${dataDirector.rating} </span>                            
+                        </div>
+                        <div class="right">
+                            <button type="" class="btn-details" data-name="${dataDirector.show_title}">details</button>    
                         </div>
                     </div>
                     <hr>`
                 );
 
             });
+            //inicializacion select
             $('select').material_select();
+
+            // hacer un evento por el boton de la vista lista-peliculas.html
+            $('.btn-details').on('click', function() {
+                // tengo el nombre de la pelicula
+                console.log('asds', $(this).data('name'));
+                window.location.href = `details.html?name=${ $(this).data('name')}`;
+            });
+
         })
 
     .fail(function() {
-            alert('Fallo');
-        })
-        .always(function() {
-            console.log('Yeii')
-        });
-
-
-
-    // hacer un evento por el boton de la vista lista-peliculas.html
-    $.ajax({
-            // esta debe variar segun el click
-            url: `https://netflixroulette.net/api/api.php?title=Hook`,
-            type: 'GET',
-            datatype: 'JSON',
-        })
-        .done(function(responseMovie) {
-            console.log(responseMovie);
-            //foto
-            console.log('url poster', responseMovie.poster);
-            $('.img-movie').append(`
-                <img src="${responseMovie.poster}" class="img-desdeapi">
-            `);
-            $('.rating').append(`
-                <div>${responseMovie.rating}</div>
-            `);
-            $('.title-movie').append(`
-                
-                <div class="title-desdeapi">
-                    ${responseMovie.show_title}  <span class="category-desdeapi">${responseMovie.category}</span>
-                </div>               
-            `);
-            $('.description-movie').append(`
-                ${responseMovie.summary}
-            `);
-            $('.people-cast').append(`
-                ${responseMovie.show_cast}
-            `);
-        })
-        .fail(function() {
             alert('Fallo');
         })
         .always(function() {
