@@ -1,3 +1,10 @@
+
+  // Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
+        
+
 //Expresión para validar un correo electrónico expresiones regulares
 var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 
@@ -14,6 +21,7 @@ var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 
             return false;
         } else {
+            //fadeOut(); hace un tipo de animacion de opacidad 100% a 0%
             $("#mensaje1").fadeOut();
         }
         if (lastname == "") {
@@ -32,6 +40,9 @@ var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
                     return false;
                 } else {
                     window.location.href = 'perfil.html'
-
                 }
     });
+
+
+
+
