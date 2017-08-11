@@ -1,6 +1,21 @@
 
 // estilos LOGIN--------
+nav {
+        background-color: #2b2c30;
+        .lupa {
+            margin-left: 260px;
+        }
+        .material-icons {
+            cursor: pointer;
+        }
+    }
 
+.title-ccount {
+    text-align: center;
+    color: #fff; 
+    border-top: 1px solid #2b2c30;
+    background-color: #2b2c30;
+}
 #contenedor-inicio{
 	background-color: #be4b4c;
 	height: 100vh;
@@ -132,6 +147,7 @@
 		margin: 4% auto;
 		}
 	}
+}
 
 
 /*validacion*/
