@@ -20400,7 +20400,7 @@ $(document).ready(function() {
                                     <span class="category small">${dataDirector.category}</span>
                                 </div>
                                 <div class="col s4 offset-s10">
-                                    <a id="favorite" class="boton waves-light"><i class="material-icons">stars</i></a>                                
+                                    <a id="favorite" class="boton waves-light"><i class="material-icons estrella">stars</i></a>                                
                                 </div>
                             </div>
                         </div>
