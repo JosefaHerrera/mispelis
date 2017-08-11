@@ -11,6 +11,8 @@ var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
     // al hacer click en el btn-enviar, empezará a validar el formulario
     $("#btn-enviar").click(function() {
         var name = $("#first_name").val();
+        // localStorage.setItem('nameLocal', name);
+        // $('#first_name').append(localStorage.getItem('nameLocal'));
         var lastname = $("#last_name").val();
         var mail = $("#email").val();
         var country = $("#country").val();
