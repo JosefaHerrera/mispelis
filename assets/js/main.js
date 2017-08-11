@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    //inicializacion select
+
+    $('select').material_select();
+  
     $.ajax({
             url: `https://netflixroulette.net/api/api.php?director=Steven%20Spielberg`,
             type: 'GET',
@@ -51,17 +55,50 @@ $(document).ready(function() {
 
         })
 
-
-    .fail(function() {
+        .fail(function() {
             alert('Fallo');
         })
         .always(function() {
             console.log('Yeii')
         });
 
-    //inicializacion select
 
-    $('select').material_select();
 
+    // hacer un evento por el boton de la vista lista-peliculas.html
+    $.ajax({
+            // esta debe variar segun el click
+            url: `https://netflixroulette.net/api/api.php?title=Hook`,
+            type: 'GET',
+            datatype: 'JSON',
+        })
+        .done(function(responseMovie) {
+            console.log(responseMovie);
+            //foto
+            console.log('url poster', responseMovie.poster);
+            $('.img-movie').append(`
+                <img src="${responseMovie.poster}" class="img-desdeapi">
+            `);
+            $('.rating').append(`
+                <div>${responseMovie.rating}</div>
+            `);
+            $('.title-movie').append(`
+                
+                <div class="title-desdeapi">
+                    ${responseMovie.show_title}  <span class="category-desdeapi">${responseMovie.category}</span>
+                </div>               
+            `);
+            $('.description-movie').append(`
+                ${responseMovie.summary}
+            `);
+            $('.people-cast').append(`
+                ${responseMovie.show_cast}
+            `);
+        })
+        .fail(function() {
+            alert('Fallo');
+        })
+        .always(function() {
+            console.log('Yeii')
+        });
 
 });
