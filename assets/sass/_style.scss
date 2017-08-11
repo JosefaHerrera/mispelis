@@ -1,6 +1,57 @@
 
+
 // estilos LOGIN--------
-nav {
+    /* Estilos Fran */
+    
+    body {
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    #index-peliculas {
+        padding: 10px;
+        background-color: #ffffff;
+        .btn-details {
+            background-color: #CF2C3E;
+            border: none;
+            margin-right: 10px;
+            color: whitesmoke;
+            border-radius: 4px;
+        }
+        .contenedor-director {
+            border-bottom: 1px solid gray;
+            margin-top: 10px;
+        }
+        .categories-option {
+            background-color: #f8f8f8;
+            border-radius: 5px;
+        }
+    }
+    
+    #favorite {
+        cursor: pointer;
+        color: #CF2C3E;
+        i {
+            font-size: 30px;
+        }
+    }
+    
+    .big {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    .small {
+        font-size: 10px;
+    }
+    
+    .dat {
+        margin-left: 20px;
+    }
+    /*Estilos Nat */
+    
+    nav {
+
         background-color: #2b2c30;
         .lupa {
             margin-left: 260px;
@@ -9,6 +60,7 @@ nav {
             cursor: pointer;
         }
     }
+
 
 .title-ccount {
     text-align: center;
@@ -163,3 +215,56 @@ nav {
     font-size: 14px;
     padding: 10px;
 }
+
+    
+    .title-details {
+        text-align: center;
+        background-color: #2b2c30;
+        color: white;
+    }
+    
+    .details-card {
+        .btn-play {
+            background-color: white;
+        }
+        .icon-play {
+            color: #CF2C3E;
+        }
+        .watch-movie {
+            background-color: #CF2C3E;
+            padding: 20px;
+            color: white;
+        }
+        .arrow-right {
+            position: absolute;
+            cursor: pointer;
+        }
+        .img-desdeapi {
+            width: 75% !important;
+            margin-left: 15%;
+        }
+        .title-desdeapi {
+            font-weight: bold;
+        }
+        .category-desdeapi {
+            color: gray;
+            font-weight: 500;
+            font-size: 10px;
+        }
+        .starring-title {
+            color: #CF2C3E;
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .people-cast {
+            color: #CF2C3E;
+        }
+        .btn-favorites {
+            background-color: #CF2C3E;
+            color: white;
+            font-size: 9px;
+            border: none;
+            margin-left: 50px;
+        }
+    }
+
