@@ -1,4 +1,32 @@
-
+//profile.html
+*{
+	margin: 0;
+	padding: 0;
+}
+.nav-profile{
+	background-color: #2b2c30;
+	.lupa{
+		margin-left: 300px;
+	}
+}
+.title-profile{
+	padding-top: 0px;
+	background-color: #2b2c30;	
+	padding-bottom: 15px;
+}
+.pic-profile{
+	width: 150px;
+	margin-top: 20px;
+}
+h5{
+	font-size: 15px;
+}
+.favorite-profile{
+	background-color: #CF2C3E;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+}    
 
 // estilos LOGIN--------
     /* Estilos Fran */
@@ -267,4 +295,3 @@
             margin-left: 50px;
         }
     }
-

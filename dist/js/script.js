@@ -20254,6 +20254,12 @@ if (jQuery) {
 })(jQuery);
 
 
+
+$(document).ready(function() {
+	$(".button-collapse").sideNav();
+});
+
+
     $('#btn-enviar').click(function(){
         /*Captura de datos escrito en los inputs*/
         var nom = document.getElementById("first_name").value;
@@ -20485,7 +20491,3 @@ var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
                     window.location.href = 'perfil.html'
                 }
     });
-
-
-
-
