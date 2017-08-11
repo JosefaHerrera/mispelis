@@ -20253,6 +20253,264 @@ if (jQuery) {
   };
 })(jQuery);
 
+// $(document).ready(function() {
+
+//     //solo para llamar pelicula listadas por director
+
+//     $.ajax({
+//             url: `https://netflixroulette.net/api/api.php?director=Steven%20Spielberg`,
+//             type: 'GET',
+//             datatype: 'JSON',
+//         })
+//         .done(function(response) {
+//             console.log(response); //todo lo que haga ocurre acá
+
+//             response.forEach(function(data) {
+//                 console.log(data.show_title);
+//                 console.log(data.release_year);
+//                 console.log(data.category);
+//             })
+
+//         })
+//         .fail(function() {
+//             alert('Fallo');
+//         })
+//         .always(function() {
+//             console.log('Yeii')
+//         });
+
+
+// });
 $(document).ready(function() {
+    var params = new URLSearchParams(location.search.slice(1));
+
+    if (params.get('name')) {
+        $.ajax({
+                // esta debe variar segun el click
+                url: `https://netflixroulette.net/api/api.php?title=${params.get('name')}`,
+                type: 'GET',
+                datatype: 'JSON',
+            })
+            .done(function(responseMovie) {
+                //console.log(responseMovie);
+                //foto
+                //console.log('url poster', responseMovie.poster);
+                $('.img-movie').append(`
+                <img src="${responseMovie.poster}" class="img-desdeapi">
+            `);
+                $('.rating').append(`
+                <div>${responseMovie.rating}</div>
+            `);
+                $('.title-movie').append(`
+
+                <div class="title-desdeapi">
+                    ${responseMovie.show_title}  <span class="category-desdeapi">${responseMovie.category}</span>
+                </div>               
+            `);
+                $('.description-movie').append(`
+                ${responseMovie.summary}
+            `);
+                $('.people-cast').append(`
+                ${responseMovie.show_cast}
+            `);
+            })
+            .fail(function() {
+                alert('Fallo');
+            })
+            .always(function() {
+                console.log('Yeii')
+            });
+    }
 
 });
+    $('#btn-enviar').click(function(){
+       
+        
+        /*Captura de datos escrito en los inputs*/
+        var nom = document.getElementById("first_name").value;
+        var ape = document.getElementById("last_name").value;
+        var ema = document.getElementById("email").value;
+        var pai = document.getElementById("country").value;
+
+        
+        
+        /*Guardando las variables creadas anteriorirmente en las nuevas variables del LocalStorage*/
+        //Variable localstorage, VALOR ASGINADO A LA VARIBLE
+        localStorage.setItem("Nombre", nom);
+        localStorage.setItem("Apellido", ape);
+        localStorage.setItem("Email", ema);
+      	localStorage.setItem("Pais", pai);
+
+        
+     
+    });   
+
+
+$(document).ready(function(){
+    $('#prueba').click(function(){
+
+
+                       
+                       
+        /*Guarda en variables locales lo que està alamacenado en las varibles del localstorage*/
+        var nombre = localStorage.getItem("Nombre");
+        $('#first_name span').text(nombre);
+        console.log('jkahsdjs')
+        var apellido = localStorage.getItem("Apellido");
+        var correo = localStorage.getItem("Email");
+        var pais = localStorage.getItem("Pais");
+
+       
+        
+        /*Mostrar con un innerhtml para jquery la variable local*/
+        // $('#first_name').html(nombre);
+        $('.first-name').append(nombre);
+        $('.last_name').html(apellido);
+ 		$('.email').html(correo);
+ 		$('.country').html(pais);
+
+        
+    });
+});
+
+
+$(document).ready(function() {
+
+
+    $.ajax({
+            url: `https://netflixroulette.net/api/api.php?director=Steven%20Spielberg`,
+            type: 'GET',
+            datatype: 'JSON',
+        })
+        .done(function(response) {
+
+            response.forEach(function(dataDirector, index) {
+
+                $('#select-category').append(`
+                    <option value="${dataDirector.category}">${dataDirector.category}</option>
+                `);
+
+                $(".gris").append(
+                    `<div class="${dataDirector.show_id} contenedor-director">
+                        <div class="col s12">
+                            <div class="col s12">
+                                <div class="col s8">
+                                    <span class="movie big">${dataDirector.show_title}</span>
+                                    <span class="year small">${dataDirector.release_year}</span> |
+                                    <span class="category small">${dataDirector.category}</span>
+                                </div>
+                                <div class="col s4 offset-s10">
+                                    <a id="favorite" class="boton waves-light"><i class="material-icons">stars</i></a>                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row dat">
+                            <div class="col s12">
+                                <span class="time small">${dataDirector.runtime} </span>
+                                <span class="director small">${dataDirector.director} </span>
+                                <span class="rating small">${dataDirector.rating} </span>                            
+                            </div>
+                            <div class="right">
+                                <button type="" class="btn-details" data-name="${dataDirector.show_title}">details</button>    
+                            </div>
+                        </div>
+                    </div>
+                  `
+                );
+
+                //capturar el valor seleccionado por el usuario
+                $('#select-category').on('change', function() {
+                    //valor seleccionado por el usuario
+                    //console.log($(this).val());
+                    var valorActual = $(this).val();
+                    // desaparecer todos los que no son de esta categoria
+                    if (valorActual === `${dataDirector.category}`) {
+                        console.log(`${dataDirector.category}`);
+                        $(`.${dataDirector.show_id}`).show();
+
+                    } else {
+                        $(`.${dataDirector.show_id}`).hide();
+                        console.log('asd', `${dataDirector.category}`);
+
+                    }
+                });
+
+            });
+            //inicializacion select
+            $('select').material_select();
+
+
+
+
+            // hacer un evento por el boton de la vista lista-peliculas.html
+            $('.btn-details').on('click', function() {
+                // tengo el nombre de la pelicula
+                console.log('asds', $(this).data('name'));
+                window.location.href = `details.html?name=${ $(this).data('name')}`;
+            });
+
+        })
+
+    .fail(function() {
+            alert('Fallo');
+        })
+        .always(function() {
+            console.log('Yeii')
+        });
+
+});
+
+
+$(document).ready(function() {
+	$(".button-collapse").sideNav();
+});
+
+  // Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
+        
+
+//Expresión para validar un correo electrónico expresiones regulares
+var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+
+    // al hacer click en el btn-enviar, empezará a validar el formulario
+    $("#btn-enviar").click(function() {
+        var name = $("#first_name").val();
+        // localStorage.setItem('nameLocal', name);
+        // $('#first_name').append(localStorage.getItem('nameLocal'));
+        var lastname = $("#last_name").val();
+        var mail = $("#email").val();
+        var country = $("#country").val();
+
+
+        if (name == "") {
+            $("#mensaje1").fadeIn("slow");
+
+            return false;
+        } else {
+            //fadeOut(); hace un tipo de animacion de opacidad 100% a 0%
+            $("#mensaje1").fadeOut();
+        }
+        if (lastname == "") {
+            $("#mensaje2").fadeIn("slow");
+            return false;
+        } else {
+            $("#mensaje2").fadeOut();
+            }if (mail == "" || !expr.test(mail)) {
+                $("#mensaje3").fadeIn("slow");
+                return false;
+            } else {
+                $("#mensaje3").fadeOut();
+                }
+                if (country == "") {
+                    $("#mensaje4").fadeIn("slow");
+                    return false;
+                } else {
+                    window.location.href = 'lista-peliculas.html'
+                }
+    });
+
+
+
+

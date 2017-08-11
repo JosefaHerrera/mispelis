@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- icon materialize   -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="" href="dist/css/style.min.css">
+</head>
+
+<body>
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <ul id="slide-out" class="side-nav" style="color: black">
+                <li>
+                    <div class="user-view">
+                        <div class="title-profile center white-text">PROFILE</div>
+                            <!-- <a href="#!user">
+                                <img class="circle" src="images/yuna.jpg">
+                            </a> -->
+                            <p>Nombre:</p>
+                            <div class="first-name">
+                                <!-- dinamico -->
+                            </div>
+                            Apellido:
+                            <div class="last_name">
+                                <!-- dinamico -->
+                            </div>
+                            Mail:
+                            <div class="email">
+                                <!-- dinamico -->
+                            </div>
+                            País:
+                            <div class="country">
+                                <!-- dinamico -->
+                            </div>
+                        </div>
+                </li>
+
+                <li><a href="lista-peliculas.html">List of movies</a></li>
+            </ul>
+            <a id="prueba" href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">dehaze</i></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse lupa"><i class="material-icons">search</i></a>
+        </div>
+    </nav>
+    <div class="title-details">DETAILS</div>
+
+    <section class="details-card">
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-image">
+                        <div class="img-movie">
+                            <!-- aqui ira la imagen clickeada desde la vista anterior -->
+                        </div>
+                        <!-- <span class="card-title">Card Title</span> -->
+                        <a class="btn-floating halfway-fab waves-effect waves-light btn-play"><i class="material-icons icon-play">play_arrow</i></a>
+                        <div class="watch-movie">
+                            Watch
+                            <span>
+                                <i class="material-icons arrow-right">chevron_right</i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+
+                        <div class="col s6 rating">
+
+                        </div>
+                        <div class="col s6">
+                            <button type="" class="btn-favorites">Add Favorites</button>
+                        </div>
+                        <!-- contenido dinamico: rating y boton -->
+
+                        <p class="title-movie">
+                            <!-- contenido dinamico: titulo de la pelicula clickeada desde la vista anterior -->
+                        </p>
+                        <p class="description-movie">
+                            <!-- contenido dinamico: summary  de la pelicula clickeada desde la vista anterior -->
+                        </p>
+                        <p class="starring">
+                            <div class="starring-title">Starring:</div>
+                            <div class="people-cast">
+                                <!-- contenido dinamico: show_cast -->
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="dist/js/script.js"></script>
+</body>
+
+</html>
