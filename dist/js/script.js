@@ -20327,7 +20327,7 @@ var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
                     $("#mensaje4").fadeIn("slow");
                     return false;
                 } else {
-                    window.location.href = 'perfil.html'
+                    window.location.href = 'lista-peliculas.html'
                 }
     });
 
