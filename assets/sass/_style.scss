@@ -1,3 +1,139 @@
+
+// estilos LOGIN--------
+
+#contenedor-inicio{
+	background-color: #be4b4c;
+	height: 100vh;
+
+	h1{
+		color: white;
+		text-align: center;
+		font-family: 'Anton', sans-serif;
+		padding-top: 20%;
+	}
+
+	#caja-botones{
+		width: 90%;
+		margin: 20% 5% auto;
+		text-align: center;
+
+		.btn-inicio{
+		width: 300px;
+		height: 35px;
+		border-radius: 5px;
+		background-color: whitesmoke !important;
+		color: #be4b4c !important;
+		display: block;
+		margin: 4% auto;
+		}
+
+	}
+
+	.forgot-pass{
+		color: white;
+		text-align: center;
+	}
+
+	.forgot-pass:hover{
+		text-decoration: underline;
+	}
+}
+
+// estilos CREAR CUENTA-------
+#contenedor-crearcuenta{
+	background-color: whitesmoke;
+	height: 100vh;
+
+	.titulo{
+		background-color: black;
+
+		h2{
+		color: white;
+		font-size: 22px;
+		font-weight: lighter;
+		}
+	}
+
+	#caja-inputs{
+		width: 90%;
+		margin: 5% 5% auto;
+
+		label{
+			color: #be4b4c;
+			font-size: 14px;
+		}
+
+		input{
+			background-color: white;
+			border-bottom: none;
+			border-radius: 5px;
+			-webkit-box-shadow: 3px 6px 21px -2px rgba(184,178,184,1);
+			-moz-box-shadow: 3px 6px 21px -2px rgba(184,178,184,1);
+			box-shadow: 3px 6px 21px -2px rgba(184,178,184,1);
+		}
+
+
+		.btn-create{
+		width: 250px;
+		height: 50px;
+		padding-top: 7px;
+		border-radius: 5px;
+		background-color: black !important;
+		color: white !important;
+		display: block;
+		margin: 4% auto;
+		}
+	}
+}
+
+// estilos VALIDAR CUENTA-------
+
+#contenedor-login{
+	background-color: whitesmoke;
+	height: 100vh;
+
+	.titulo{
+		background-color: black;
+
+		h2{
+		color: white;
+		font-size: 22px;
+		font-weight: lighter;
+		}
+	}
+
+	#caja-inputs{
+		width: 90%;
+		margin: 5% 5% auto;
+
+		label{
+			color: #be4b4c;
+			font-size: 14px;
+		}
+
+		input{
+			background-color: white;
+			border-bottom: none;
+			border-radius: 5px;
+			-webkit-box-shadow: 3px 6px 21px -2px rgba(184,178,184,1);
+			-moz-box-shadow: 3px 6px 21px -2px rgba(184,178,184,1);
+			box-shadow: 3px 6px 21px -2px rgba(184,178,184,1);
+		}
+
+
+		.btn-enter{
+		width: 250px;
+		height: 50px;
+		padding-top: 7px;
+		border-radius: 5px;
+		background-color: black !important;
+		color: white !important;
+		display: block;
+		margin: 4% auto;
+		}
+	}
+
+
 /*validacion*/
 
 .errores {
@@ -10,9 +146,4 @@
     display: none;
     font-size: 14px;
     padding: 10px;
-}
-
-
-#texto{
-    color:black;
 }
